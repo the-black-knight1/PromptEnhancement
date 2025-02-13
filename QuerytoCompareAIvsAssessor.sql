@@ -1,5 +1,6 @@
 --- Query to compare AI generated results to assessor generated ones and getting a score on it
 --- This query is used to compare the results of the AI generated results to the assessor generated results for one apprentice
+-- Put them in list format: ('661baa7f-604c-4248-9cb4-9095e8918f27', '17fe04d9-689e-4758-a171-f25868a8006d', 'd679d744-d9d9-47a6-acc8-d972dd2f765d', '762ef0ee-f5af-441e-8b8e-ee15721f0d6b', '9c279464-f202-4f8d-99f7-06d27d859a3d')
 
 WITH OverallResults AS 
 (
@@ -34,7 +35,7 @@ WITH OverallResults AS
         ON SA.learner_submission_id = LS.id
     JOIN Learner L
         ON LS.learner_id = L.id 
-    WHERE LS.learner_id = '661baa7f-604c-4248-9cb4-9095e8918f27' 
+    WHERE LS.learner_id = '9c279464-f202-4f8d-99f7-06d27d859a3d' 
     AND LS.submission_name NOT LIKE '%retry%'
 ),
 CriteriaPhase0 AS (
@@ -155,3 +156,4 @@ SELECT
     matching_measurements,
     total_measurements
 FROM match_calculations;
+

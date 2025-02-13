@@ -21,20 +21,13 @@ WHERE phase >= 4 AND created_at BETWEEN '2024-11-15' AND '2024-11-30' AND Subs_P
 
 --- Cannot take just any learner, need to take learners who have submitted at least 4 submissions
 --- Focusing on some fixed standards for now; ('Data analyst IFAv1.1', 'Data engineer IFAv1.0')
---- Sampling five learners by Learner ID:
--- 661baa7f-604c-4248-9cb4-9095e8918f27
--- 17fe04d9-689e-4758-a171-f25868a8006d
--- d679d744-d9d9-47a6-acc8-d972dd2f765d
--- 762ef0ee-f5af-441e-8b8e-ee15721f0d6b
--- 9c279464-f202-4f8d-99f7-06d27d859a3d
--- Put them in list format: ('661baa7f-604c-4248-9cb4-9095e8918f27', '17fe04d9-689e-4758-a171-f25868a8006d', 'd679d744-d9d9-47a6-acc8-d972dd2f765d', '762ef0ee-f5af-441e-8b8e-ee15721f0d6b', '9c279464-f202-4f8d-99f7-06d27d859a3d')
-
+-- ('d679d744-d9d9-47a6-acc8-d972dd2f765d', '762ef0ee-f5af-441e-8b8e-ee15721f0d6b', '9c279464-f202-4f8d-99f7-06d27d859a3d', 'c3393a69-0b6f-4dad-95c9-be9267c72b9a', '4e85d680-7f58-47d0-b270-bf5c91b70fe5')
 
 -- Getting LearnerSubmission id for these learners
 
-SELECT *
-FROM LearnerSubmission
-WHERE learner_id IN ('661baa7f-604c-4248-9cb4-9095e8918f27', '17fe04d9-689e-4758-a171-f25868a8006d', 'd679d744-d9d9-47a6-acc8-d972dd2f765d', '762ef0ee-f5af-441e-8b8e-ee15721f0d6b', '9c279464-f202-4f8d-99f7-06d27d859a3d') AND submission_name NOT LIKE '%retry%';
+-- SELECT *
+-- FROM LearnerSubmission
+-- WHERE learner_id IN ('661baa7f-604c-4248-9cb4-9095e8918f27', '17fe04d9-689e-4758-a171-f25868a8006d', 'd679d744-d9d9-47a6-acc8-d972dd2f765d', '762ef0ee-f5af-441e-8b8e-ee15721f0d6b', '9c279464-f202-4f8d-99f7-06d27d859a3d') AND submission_name NOT LIKE '%retry%';
 
 
 --- ================ Getting the Submission Ids for these learners ====================
